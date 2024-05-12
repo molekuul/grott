@@ -238,6 +238,7 @@ class Conf :
         print("\tpvtemp:              \t",self.pvtemp)   
         print("\tpvurl:               \t",self.pvurl)
         print("\tpvapikey:            \t",self.pvapikey)                
+        print("\tpvuplimit:            \t",self.pvuplimit)                
         print("\tpvinverters:         \t",self.pvinverters)
         if self.pvinverters == 1 :
             print("\tpvsystemid:          \t",self.pvsystemid[1])
