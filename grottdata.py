@@ -539,11 +539,13 @@ def procdata(conf,data):
                     "d"     : pvodate,
                     "t"     : pvotime,
                 #2.7.1    "v1"    : definedkey["pvenergytoday"]*100,
-                    "v2"    : definedkey["pvpowerout"]/10,
+                #2.8.3.JW         "v2"    : definedkey["pvpowerout"]/10,
+                    "v2"    : (definedkey["pv1watt"]+definedkey["pv2watt"])/10,
                     "v6"    : definedkey["pvgridvoltage"]/10
                     }
                 if not conf.pvdisv1 :
-                    pvdata["v1"] = definedkey["pvenergytoday"]*100
+               # 2.8.3.JW     pvdata["v1"] = definedkey["pvenergytoday"]*100
+                    pvdata["v1"] = (definedkey["epv1today"]+definedkey["epv2today"])*100
                 else:   
                     if conf.verbose :  print("\t - " + "Grott PVOutput send V1 disabled") 
     
